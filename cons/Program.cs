@@ -7,13 +7,12 @@ namespace cons {
     
     class Program {
         static void Main(string[] args) {
-            string connectionString = "server=host.docker.internal;port=3333;uid=root;pwd=a;database=FlightData";
+            string connectionString = "server=host.docker.internal;port=3333;uid=root;pwd=a;database=wpidev";
 
             using (var connection = new MySqlConnection(connectionString)) {
                 connection.Open();
 
-                printQuery("select * from deltas limit 1;",connection);
-                printQuery("select * from southwests limit 1;",connection);
+                printQuery("select * from employees;",connection);
             }            
         }
 
